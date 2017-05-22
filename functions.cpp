@@ -83,11 +83,33 @@ BinaryTreeNode * insert(BinaryTreeNode * node, int value)
 }
 
 
+void secondLargestUtil(BinaryTreeNode * node, int& count)
+{
+
+	if( (node == NULL) || (count >= 2) )
+	{
+		return;
+	}
+
+	secondLargestUtil(node->right_, count);
+
+	count++;
+
+	if(count == 2)
+	{
+		std::cout << "2nd largest element is: " << std::to_string(node->value_) << "\n";
+	}
+
+	secondLargestUtil(node->left_, count);
+}
 
 
 
-
-
+void secondLargest(BinaryTreeNode * node)
+{
+	int count = 0;
+	secondLargestUtil(node, count);
+}
 
 
 

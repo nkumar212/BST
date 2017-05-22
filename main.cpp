@@ -17,7 +17,12 @@ int main()
 	insert(root,70);
 	insert(root,60);
 	insert(root,80);
-
+	insert(root,85);
+	insert(root,52);
+	insert(root,31);
+	insert(root, 7);
+	insert(root,98);
+	insert(root,12);
 
 	printInOrder(root);
 	std::cout << "\n";
@@ -35,5 +40,6 @@ int main()
 	else {
 		std::cout << "failure\n";
 	}
-	
+
+	secondLargest(root);	
 }
