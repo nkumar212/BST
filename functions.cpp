@@ -62,5 +62,55 @@ bool checkBalance(BinaryTreeNode * node, const int lowerBound = std::numeric_lim
 	return checkBalance(node->left_, lowerBound, node->value_) && checkBalance(node->right_, node->value_, upperBound);
 }
 	
+BinaryTreeNode * insert(BinaryTreeNode * node, int value)
+{
+	if(node == NULL)
+	{
+		return new BinaryTreeNode(value);
+	}
 
+	if( value < node->value_ )
+	{
+		node->left_ = insert( node->left_, value);
+	}
 	
+	if( value > node->value_)
+	{
+		node->right_ = insert( node->right_, value);
+	}
+	
+	return node;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

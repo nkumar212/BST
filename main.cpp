@@ -8,23 +8,27 @@
 int main()
 {
 
-	BinaryTreeNode  root = BinaryTreeNode(1);
+	BinaryTreeNode * root = NULL;
 
-	root.insertLeft(2);
-	root.insertRight(3);
-	root.left_->insertLeft(4);
-	root.left_->insertRight(5);
+	root = insert(root, 50);
+	insert(root,30);
+	insert(root,20);
+	insert(root,40);
+	insert(root,70);
+	insert(root,60);
+	insert(root,80);
 
-	printInOrder(&root);
+
+	printInOrder(root);
 	std::cout << "\n";
 	
-	printPreOrder(&root);
-	std::cout << "\n";
+//	printPreOrder(&root);
+//	std::cout << "\n";
 
-	printPostOrder(&root);
-	std::cout << "\n";
+//	printPostOrder(&root);
+//	std::cout << "\n";
 
-	if(checkBalance(&root))
+	if(checkBalance(root))
 	{
 		std::cout << "success\n";
 	}
